@@ -209,52 +209,36 @@ class StoreListTBV: UITableViewController {
                 store = Store()
                 
                 
-                if let sId:AnyObject = s["storeID"] as AnyObject?
+                if let sId:String = s["storeID"] as? String
                 {
-                    if let storeID = sId as? String
-                    {
-                        print("Store id = \(storeID)")
-                        
-                    }
-                }
-                
-                
-                if let sn:AnyObject = s["storeName"] as AnyObject?
-                {
-                    if let storeName = sn as? String
-                    {
-                        store.storeName = storeName
-                                               
-                    }
-                }
-                
-                
-                if let sn:AnyObject = s["storeImageName"] as AnyObject?
-                {
-                    if let storeIcon = sn as? String
-                    {
-                        store.storeImageName = storeIcon
-                        
-                    }
-                }
-                
-                
-                if let sn:AnyObject = s["storeLat"] as AnyObject?
-                {
-                    if let storelat = Float(sn as! String)
-                    {
-                        store.storeLat = storelat
-                        
-                    }
-                }
-
-                
-                if let sn:String = s["storeLng"] as! String?
-                {
-                        store.storeLng = Float(sn)!
+                        print("Store id = \(sId)")
                     
                 }
-
+                
+                if let sn:String = s["storeName"] as? String
+                {
+                        store.storeName = sn
+                }
+        
+                
+                if let simgn:String = s["storeImageName"] as? String
+                {
+                        store.storeImageName = simgn
+                }
+                
+                
+                if let slat:String = s["storeLat"] as? String
+                {
+                    store.storeLat = Float(slat)!
+                    
+                }
+                
+                
+                if let slng:String = s["storeLng"] as? String
+                {
+                        store.storeLng = Float(slng)!
+                    
+                }
                 
                 storeList += [store]
                 
